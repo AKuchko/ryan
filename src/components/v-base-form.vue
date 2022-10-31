@@ -2,7 +2,7 @@
     <form @submit.prevent="sendData">
         <label>
             Enter Phone Number:
-            <input type="tel" v-model="phoneModel">
+            <input type="tel" v-model="phone">
         </label>
     </form>
 </template>
@@ -12,14 +12,13 @@ export default {
   name: 'baseFormVue',
   data: () => {
     return {
-      props: {
-        phoneModel: ''
-      }
+      phone: ''
     }
   },
   methods: {
     sendData () {
-      console.log(this.phoneModel)
+      console.log(this.phone)
+      this.phone = ''
     }
   }
 }

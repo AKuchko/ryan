@@ -20,14 +20,25 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
 --- 
 
 ## Project Stack
+# Frontend
 - Vue.js 3.2 
-- Express 
-- MongoDB
-- Node.js
+
+# Backend
+- Express (Web-Framework for Node.js apps)
+- MongoDB (Database)
+- Mongoose (ORM)
+- Morgan (HTTP logger)
+
+---
+
+## Used Fonts
+
+<code>
+@font-face {
+  font-family: 'Inter';
+}
+</code>
 
