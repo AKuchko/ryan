@@ -20,8 +20,6 @@ npm run build
 npm run lint
 ```
 
---- 
-
 ## Project Stack
 ### Frontend
 - Vue.js 3.2 
@@ -32,8 +30,6 @@ npm run lint
 - Mongoose (ORM)
 - Morgan (HTTP logger)
 
----
-
 ## Used Fonts
 
 <code>
@@ -41,6 +37,3 @@ npm run lint
   font-family: 'Inter';
 }
 </code>
-
-<h1 style="font-family: url(https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap);">Title</h1>
-
