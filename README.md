@@ -23,10 +23,10 @@ npm run lint
 --- 
 
 ## Project Stack
-# Frontend
+### Frontend
 - Vue.js 3.2 
 
-# Backend
+### Backend
 - Express (Web-Framework for Node.js apps)
 - MongoDB (Database)
 - Mongoose (ORM)
@@ -41,4 +41,6 @@ npm run lint
   font-family: 'Inter';
 }
 </code>
+
+<h1 style="font-family: url(https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap);">Title</h1>
 
