@@ -37,3 +37,5 @@ npm run lint
   font-family: 'Inter';
 }
 </code>
+
+## API
