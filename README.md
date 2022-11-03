@@ -15,9 +15,9 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
+### Run server
 ```
-npm run lint
+npm run start
 ```
 
 ## Project Stack
