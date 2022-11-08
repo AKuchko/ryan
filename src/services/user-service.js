@@ -1,13 +1,21 @@
-import client from '@/http/client'
+const client = require('../http/client')
 
 class UserService {
-    _user_api = '/api/users'
-
-    deleteUser () {
-        client.delete(this._user_api + '/:id')
+    getAllUsers() {
+        client.get('/api/users', )
     }
 
-    updateUsername ({ username }) {
-        client.put(this._user_api + '/:id', { username })
+    getUser({ id }) {
+        client.get(`/api/users/${id}`)
+    }
+
+    updateUserInfo({ id, username, password, email, photo, posts, subscriptions, role }) {
+        client.put(`/api/users/${id}`, {username, email, password, photo, posts, subscriptions, role})
+    }
+
+    deleteUser({ id }) {
+        client.delete(`/api/users/${id}`)
     }
 }
+
+module.exports = new UserService

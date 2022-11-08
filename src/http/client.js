@@ -1,4 +1,4 @@
-import axios from 'axios'
+const axios = require('axios')
 
 const timeout = 600000
 const axiosInstance = axios.create({ baseURL: process.env.VUE_APP_BASE_URL || '/', timeout })
@@ -10,4 +10,4 @@ const client = {
   put: axiosInstance.put
 }
 
-export default client
+module.exports = client

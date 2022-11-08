@@ -22,7 +22,7 @@ app.use('/api/users', require('./routes/users-router'))
 app.use('/api/posts', require('./routes/posts-router'))
 app.use('/api/auth', require('./routes/auth-router'))
 
-app.use('/', express.static(path.join(__dirname, '../dist')))
+app.use('/', express.static(path.join('dist')))
 
 app.listen(PORT, () => {
   console.log(`Status [OK]: app is running on port ${PORT}`)
