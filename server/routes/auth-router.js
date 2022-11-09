@@ -33,16 +33,13 @@ router.post('/login', async (req, res) => {
         if (!validPassword) return res.status(400).json({ message: 'wrong password' })
         
         const token = jwt.sign({ id: user._id }, 'SRCRET_KEY', { expiresIn: '3m' })
-        res.json({ access: token, refresh: '' })
-        return { access: token, refresh: '' }
+        const refresh = jwt.sign({ id: user._id }, 'REFRESH_SECRET_KEY', { expiresIn: '10m' })
+        res.json({ access: token, refresh: refresh })
+        return { access: token, refresh: refresh }
       }
       catch {
         return res.status(400).json({message: 'Something wrong'})
       }
-})
-
-router.post('/token/obtain', ({ email }) => {
-
 })
 
 router.post('/token/refresh', (req, res) => {
