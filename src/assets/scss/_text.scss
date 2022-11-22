@@ -1,0 +1,23 @@
+.simple-text {
+    font-size: $text-mobile;
+
+    @media (min-width: 768px) {
+        font-size: $text-tablet;
+    }
+
+    @media (min-width: 1440px) {
+        font-size: $text-desktop;
+    }
+}
+
+.title {
+    font-size: $title-modile;
+
+    @media (min-width: 768px) {
+        font-size: $title-tablet;
+    }
+
+    @media (min-width: 1440px) {
+        font-size: $title-desktop;
+    }
+}

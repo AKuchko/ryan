@@ -1,6 +1,6 @@
 <template>
     <div class="base-block">
-        <slot name="block-inner"></slot>
+        <slot></slot>
     </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
 <style lang="scss">
 .base-block {
     width: 100%;
-    padding: 30px 40px;
+    padding: 30px 20px;
     background: $color-secondary-dark;
     border-radius: 10px;
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);

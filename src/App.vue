@@ -13,13 +13,15 @@
   height: 100vh;
   font-family: 'Inter';
   color: $color-text-dark;
-  background: $color-main-dark;
+  background: $color-bg-dark;
+
+  @media (prefers-color-scheme: light) {
+    color: $color-text-light;
+    background: $color-bg-light;
+  }
 }
 
-@media (prefers-color-scheme: light) {
-  #app {
-    background: $color-main-light;
-    color: $color-text-light;
-  }
+.content-wrapper {
+  padding: 20px;
 }
 </style>

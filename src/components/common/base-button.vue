@@ -1,37 +1,62 @@
 <template>
     <button 
     :class="buttonStyle" 
-    type="submit">{{ text }}</button>
+    type="submit">
+        <icon v-if="icon" 
+            :icon="icon"
+            color="inherit"/>
+        {{ text }}
+    </button>
 </template>
 
 <script>
+import { Icon } from '@iconify/vue'
+
 export default {
     name: 'BaseButton',
+    components: { Icon },
     props: {
         text: { type: String, default: 'Button' },
-        outlined: { type: Boolean, default: false },
-        fill: { type: Boolean, default: false }
+        type: { type: String, default: 'none-decoration', valdator: (value) => ['none-decoration', 'outlined', 'filled'].includes(value) },
+        width: { type: Number },
+        icon: { type: String, default: '' }
     },
     computed: {
         buttonStyle() {
-            let style = 'base-button'
-            if (this.outlined) style += ' base-button--outlined'
-            if (this.fill) style += ' base-button--bordered'
-            return style
+            return 'simple-text base-button base-button--' + this.type
         }
     }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .base-button {
     display: block;
     background: transparent;
     transition: all 0.2s ease 0s;
 }
 
+.base-button--none-decoration {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 1px;
+        background: $color-text-dark;
+        transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+
 .base-button--outlined {
-    min-width: 250px;
+    min-width: 230px;
     height: 40px;
     padding: 0 15px;
     border: 1px solid $color-text-dark;
@@ -44,12 +69,34 @@ export default {
 }
 
 .base-button--filled {
+    min-width: 230px;
+    height: 40px;
+    border-radius: 10px;
+    color: $color-text-light;
     background: $color-text-dark;
+
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 @media (prefers-color-scheme: light) {
     .base-button--outlined {
         border-color: $color-text-light;
+
+        &:hover {
+            background: $color-text-light;
+            color: $color-text-dark;
+        }
+    }
+
+    .base-button--filled {
+        color: $color-text-dark;
+        background: $color-text-light;
+    }
+
+    .base-button--none-decoration::after {
+        background: $color-text-light;
     }
 }
 </style>
