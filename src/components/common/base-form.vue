@@ -1,5 +1,6 @@
 <template>
     <form action="post" @submit.prevent="sendData">
+        <h1 class="title">{{ title }}</h1>
         <ul class="base-form__list">
             <li class="base-form__list-item" v-for="input in inputs">
                 <base-input
@@ -29,13 +30,13 @@ export default {
         }
     },
     props: {
+        title: '',
         inputs: { type: Array },
         caption:  ''
     },
     methods: {
         updateInputValue({ value, id }) {
             this.inputsData[id] = value
-            console.log(this.inputsData);
         },
         sendData() {
             this.$emit('submit-emit', this.inputsData)

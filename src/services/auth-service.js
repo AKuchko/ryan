@@ -1,5 +1,6 @@
 const client = require('../http/client')
-const storageService = require('./storage')
+const storageService = require('./common/storage')
+// const Mailer = require('./common/mailer')
 
 const ACCESS_TOKEN = 'app:access'
 const REFRESH_TOKEN = 'app:refresh'
@@ -37,6 +38,10 @@ class AuthService {
     }
   } 
 
+  checkMail(mail) {
+    client.post('/api/auth/mailer', { mail: mail })
+  }
+
   registration(body) {
     client.post('/api/auth/reg', { body })
   }
@@ -47,8 +52,10 @@ class AuthService {
     })
   }
 
-  fetch() {
-
+  refreshAuthToken({ refresh }) {
+    return client.post('/api/auth/token/refresh', { refresh }).then(token => {
+      this.token = token.data
+    })
   }
 }
 

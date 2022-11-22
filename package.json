@@ -17,6 +17,7 @@
     "morgan": "^1.10.0",
     "node-polyfill-webpack-plugin": "^2.0.1",
     "node-sass": "^7.0.3",
+    "nodemailer": "^6.8.0",
     "sass-loader": "^13.1.0",
     "style-loader": "^3.3.1",
     "vue": "^3.2.13",
